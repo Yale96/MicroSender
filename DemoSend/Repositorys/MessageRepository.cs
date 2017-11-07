@@ -123,9 +123,7 @@ namespace DemoSend.Repositorys
                                      routingKey: "hello",
                                      basicProperties: properties,
                                      body: body);
-                Debug.WriteLine("Verzonden: ", message);
-
-
+                Debug.WriteLine(" [x] Verzonden {0}", message);
             }
         }
     }
