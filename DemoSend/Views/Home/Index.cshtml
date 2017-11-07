@@ -1,0 +1,39 @@
+﻿<div id="body">
+    <ul id="messages"></ul>
+</div>
+
+<form id="saveMessageForm" method="post">
+    <h3>Create a new Message</h3>
+    <p>
+        <label for="Id">Message Id:</label>
+        <input type="text" name="Id" />
+    </p>
+    <p>
+        <label for="Application">Application:</label>
+        <input type="text" name="Application" />
+    </p>
+    <input type="button" id="saveMessage" value="Save" />
+</form>
+
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $.getJSON('/api/message', function (messagesJsonPayload) {
+                $(messagesJsonPayload).each(function (i, item) {
+                    $('#messages').append('<li>' + item.Id + ", " + item.Application + ", " + item.TimeStamp + ", "
+                        + item.LogLevel + ", " + item.Location + ", " + item.Content + '</li>');
+                });
+            });
+        });
+
+        $('#saveMessage').click(function () {
+            $.post("/api/message",
+                $("#saveMessageForm").serialize(),
+                function (value) {
+                    $('#messages').append('<li>' + value.Id + ", " + value.Application + '</li>');
+                },
+                "json"
+            );
+        });
+    </script>
+}
