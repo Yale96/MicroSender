@@ -1,19 +1,20 @@
 ﻿<div id="body">
+    <h1>Overzicht van log data</h1>
     <ul id="messages"></ul>
-</div>
 
-<form id="saveMessageForm" method="post">
-    <h3>Create a new Message</h3>
-    <p>
-        <label for="Id">Message Id:</label>
-        <input type="text" name="Id" />
-    </p>
-    <p>
-        <label for="Application">Application:</label>
-        <input type="text" name="Application" />
-    </p>
-    <input type="button" id="saveMessage" value="Save" />
-</form>
+    <form id="saveMessageForm" method="post">
+        <h3>Create a new Message</h3>
+        <p>
+            <label for="Id">Message Id:</label>
+            <input type="text" name="Id" />
+        </p>
+        <p>
+            <label for="Application">Application:</label>
+            <input type="text" name="Application" />
+        </p>
+        <input type="button" id="saveMessage" value="Save" />
+    </form>
+</div>
 
 @section scripts{
     <script type="text/javascript">

@@ -58,23 +58,65 @@ namespace DemoSend.Repositorys
             return new Message[]
             {
                 new Message
-                {
-                    Id = 1,
-                    Application = "Werknemerloket",
-                    TimeStamp = "13:30",
-                    LogLevel = "Fatal",
-                    Location = "/Werknemerloket/login.aspx",
-                    Content = "Werknemer kan niet inloggen."
-                },
-                new Message
-                {
-                    Id = 2,
-                    Application = "Werkgeverloket",
-                    TimeStamp = "09:45",
-                    LogLevel = "Fatal",
-                    Location = "/Werkgeverloket/login.aspx",
-                    Content = "Werkgever kan niet inloggen."
-                }
+                        {
+                            Id = 1,
+                            Application = "Werknemerloket",
+                            TimeStamp = "13:30",
+                            LogLevel = "Verbose",
+                            Location = "/Werknemerloket/login.aspx",
+                            Content = "Werknemer kan niet inloggen."
+
+                        },
+                        new Message
+                        {
+                            Id = 2,
+                            Application = "Werkgeverloket",
+                            TimeStamp = "09:45",
+                            LogLevel = "Debug",
+                            Location = "/Werkgeverloket/login.aspx",
+                            Content = "Werkgever kan niet inloggen."
+
+                        },
+                        new Message
+                        {
+                            Id = 1,
+                            Application = "Werknemerloket",
+                            TimeStamp = "13:30",
+                            LogLevel = "Information",
+                            Location = "/Werknemerloket/login.aspx",
+                            Content = "Werknemer kan niet inloggen."
+
+                        },
+                        new Message
+                        {
+                            Id = 2,
+                            Application = "Werkgeverloket",
+                            TimeStamp = "09:45",
+                            LogLevel = "Warning",
+                            Location = "/Werkgeverloket/login.aspx",
+                            Content = "Werkgever kan niet inloggen."
+
+                        },
+                        new Message
+                        {
+                            Id = 1,
+                            Application = "Werknemerloket",
+                            TimeStamp = "13:30",
+                            LogLevel = "Error",
+                            Location = "/Werknemerloket/login.aspx",
+                            Content = "Werknemer kan niet inloggen."
+
+                        },
+                        new Message
+                        {
+                            Id = 2,
+                            Application = "Werkgeverloket",
+                            TimeStamp = "09:45",
+                            LogLevel = "Fatal",
+                            Location = "/Werkgeverloket/login.aspx",
+                            Content = "Werkgever kan niet inloggen."
+
+                        }
             };
         }
 
