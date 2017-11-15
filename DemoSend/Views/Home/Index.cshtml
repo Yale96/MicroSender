@@ -1,19 +1,28 @@
 ﻿<div id="body">
-    <h1>Overzicht van log data</h1>
-    <ul id="messages"></ul>
-
-    <form id="saveMessageForm" method="post">
-        <h3>Create a new Message</h3>
-        <p>
-            <label for="Id">Message Id:</label>
-            <input type="text" name="Id" />
-        </p>
-        <p>
-            <label for="Application">Application:</label>
-            <input type="text" name="Application" />
-        </p>
-        <input type="button" id="saveMessage" value="Save" />
-    </form>
+    <div class="col-md-3" style="padding-left: 0px;  padding-right: 0px;">
+        <img src="~/Afbeeldingen/micro-services1-297x250.png" class="img-responsive">
+    </div>
+    <div class="col-md-2">
+        <form id="saveMessageForm" method="post">
+            <h3>Select your log levels</h3>
+            <input type="checkbox" name="all" value="All">All Data<br>
+            <input type="checkbox" name="verbose" value="Verbose">Verbose<br>
+            <input type="checkbox" name="debug" value="Debug">Debug<br>
+            <input type="checkbox" name="information" value="Information">Information<br>
+            <input type="checkbox" name="warning" value="Warning">Warning<br>
+            <input type="checkbox" name="error" value="Error">Error<br>
+            <input type="checkbox" name="fatal" value="Fatal">Fatal<br>
+            <br>
+            <input type="button" id="saveMessage" value="Save" />
+        </form>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Overzicht van log data</h1>
+            <ul id="messages"></ul>
+        </div>
+    </div>
 </div>
 
 @section scripts{
