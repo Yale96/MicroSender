@@ -79,9 +79,9 @@ namespace DemoSend.Repositorys
                         },
                         new Message
                         {
-                            Id = 1,
+                            Id = 3,
                             Application = "Werknemerloket",
-                            TimeStamp = "13:30",
+                            TimeStamp = "15:18",
                             LogLevel = "Information",
                             Location = "/Werknemerloket/login.aspx",
                             Content = "Werknemer kan niet inloggen."
@@ -89,9 +89,9 @@ namespace DemoSend.Repositorys
                         },
                         new Message
                         {
-                            Id = 2,
+                            Id = 4,
                             Application = "Werkgeverloket",
-                            TimeStamp = "09:45",
+                            TimeStamp = "10:45",
                             LogLevel = "Warning",
                             Location = "/Werkgeverloket/login.aspx",
                             Content = "Werkgever kan niet inloggen."
@@ -99,9 +99,9 @@ namespace DemoSend.Repositorys
                         },
                         new Message
                         {
-                            Id = 1,
+                            Id = 5,
                             Application = "Werknemerloket",
-                            TimeStamp = "13:30",
+                            TimeStamp = "17:30",
                             LogLevel = "Error",
                             Location = "/Werknemerloket/login.aspx",
                             Content = "Werknemer kan niet inloggen."
@@ -109,9 +109,9 @@ namespace DemoSend.Repositorys
                         },
                         new Message
                         {
-                            Id = 2,
+                            Id = 6,
                             Application = "Werkgeverloket",
-                            TimeStamp = "09:45",
+                            TimeStamp = "19:35",
                             LogLevel = "Fatal",
                             Location = "/Werkgeverloket/login.aspx",
                             Content = "Werkgever kan niet inloggen."
