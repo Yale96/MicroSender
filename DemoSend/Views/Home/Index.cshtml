@@ -5,8 +5,8 @@
     <div class="col-md-2">
         <form id="saveMessageForm" method="post">
             <h3>Selecteer log levels</h3>
-            <input type="checkbox" name="all" value="All">Alle Data<br>
-            <input type="checkbox" name="verbose" value="Verbose">Verbose<br>
+            <input type="checkbox" id="all" value="All" onclick="change">Alle Data<br>
+            <input type="checkbox" id="verbose" value="Verbose">Verbose<br>
             <input type="checkbox" name="debug" value="Debug">Debug<br>
             <input type="checkbox" name="information" value="Information">Information<br>
             <input type="checkbox" name="warning" value="Warning">Warning<br>
@@ -44,6 +44,12 @@
                 },
                 "json"
             );
+        });
+
+        $(function change() {
+            if ($("#all").prop("checked", true)) {
+                $("#verbose").prop("checked", true);
+            }
         });
     </script>
 }
