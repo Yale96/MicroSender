@@ -116,11 +116,6 @@ namespace DemoSend.Repositorys
 
         public bool SaveMessage(Message message)
         {
-            Message m = new Message
-            {
-                Id = 6,
-                Application = "Werkgeverloket"
-            };
             var ctx = HttpContext.Current;
 
             if (ctx != null)
