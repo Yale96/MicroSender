@@ -3,15 +3,11 @@
         <img src="~/Afbeeldingen/loket-avatar.jpg" class="img-responsive">
     </div>
     <div class="col-md-2">
-        <form id="saveMessageForm" method="post">
+        <form id="saveMessageForm" method="post" >
             <h3>Selecteer log levels</h3>
-            <input type="checkbox" id="all" value="All" onclick="change">Alle Data<br>
-            <input type="checkbox" id="verbose" value="Verbose">Verbose<br>
-            <input type="checkbox" name="debug" value="Debug">Debug<br>
-            <input type="checkbox" name="information" value="Information">Information<br>
-            <input type="checkbox" name="warning" value="Warning">Warning<br>
-            <input type="checkbox" name="error" value="Error">Error<br>
-            <input type="checkbox" name="fatal" value="Fatal">Fatal<br>
+            <label><input type="checkbox" name="deletedItems" value="Verbose"> Verbose</label>
+            <label><input type="checkbox" name="deletedItems" value="Fatal"> Fatal</label>
+            <label><input type="checkbox" name="deletedItems" value="Information"> Information</label>
             <br>
             <input type="button" id="saveMessage" value="Save" />
         </form>
@@ -37,13 +33,42 @@
         });
 
         $('#saveMessage').click(function () {
-            $.post("/api/message",
-                $("#saveMessageForm").serialize(),
+
+            var $form = $('#saveMessageForm');
+
+            var $inputs = $('input[type="checkbox"]:checked', $form);
+
+            var logLevels = [];
+            $inputs.each(function () {
+                logLevels.push($(this).val());
+            });
+
+
+            var blaa = {
+                LogLevels: logLevels
+            };
+
+            var json = JSON.stringify(blaa);
+
+
+            /*$.post("/api/message",
+                json, //$("#saveMessageForm").serialize(),
                 function (value) {
-                    $('#messages').append('<li>' + value.Id + ", " + value.Application + '</li>');
+                    console.log('Success!');
                 },
                 "json"
-            );
+            );*/
+
+            $.ajax({
+                url: "/api/message/",
+                type: "POST",
+                data: json,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    console.log(data);
+                }
+            });
         });
 
         $(function change() {

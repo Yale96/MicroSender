@@ -116,6 +116,11 @@ namespace DemoSend.Repositorys
 
         public bool SaveMessage(Message message)
         {
+            Message m = new Message
+            {
+                Id = 6,
+                Application = "Werkgeverloket"
+            };
             var ctx = HttpContext.Current;
 
             if (ctx != null)
@@ -159,7 +164,7 @@ namespace DemoSend.Repositorys
                                      routingKey: "hello",
                                      basicProperties: properties,
                                      body: body);
-                Debug.WriteLine(" [x] Verzonden {0}", message);
+                Debug.WriteLine(" [x] Verzonden {0}", messageToSend);
             }
         }
     }
