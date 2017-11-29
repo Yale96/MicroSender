@@ -4,18 +4,21 @@
     </div>
     <div class="col-md-2">
         <form id="saveMessageForm" method="post" >
-            <h3>Selecteer log levels</h3>
-            <label><input type="checkbox" name="deletedItems" value="Verbose"> Verbose</label>
-            <label><input type="checkbox" name="deletedItems" value="Fatal"> Fatal</label>
-            <label><input type="checkbox" name="deletedItems" value="Information"> Information</label>
+            <h2>Selecteer log level(s)</h2>
+            <label><input type="checkbox" name="selectedItems" value="Verbose"> Verbose</label><br />
+            <label><input type="checkbox" name="selectedItems" value="Debug"> Debug</label><br />
+            <label><input type="checkbox" name="selectedItems" value="Information"> Information</label><br />
+            <label><input type="checkbox" name="selectedItems" value="Warning"> Warning</label><br />
+            <label><input type="checkbox" name="selectedItems" value="Error"> Error</label><br />
+            <label><input type="checkbox" name="selectedItems" value="Fatal"> Fatal</label>
             <br>
-            <input type="button" id="saveMessage" value="Save" />
+            <input type="button" id="saveMessage" value="Push to queue" />
         </form>
     </div>
     
     <div class="row">
         <div class="col-md-6">
-            <h1>Overzicht van log data</h1>
+            <h2>Overzicht van (dummy) log data</h2>
             <ul id="messages"></ul>
         </div>
     </div>
