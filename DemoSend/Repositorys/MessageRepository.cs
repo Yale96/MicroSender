@@ -143,7 +143,7 @@ namespace DemoSend.Repositorys
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.QueueDeclare(queue: "hello",
+                channel.QueueDeclare(queue: "task_queue",
                                      durable: false,
                                      exclusive: false,
                                      autoDelete: false,
@@ -152,12 +152,12 @@ namespace DemoSend.Repositorys
                 string messageToSend = JsonConvert.SerializeObject(message);
                 var body = Encoding.UTF8.GetBytes(messageToSend);
 
-                var properties = channel.CreateBasicProperties();
-                properties.Persistent = true;
+                //var properties = channel.CreateBasicProperties();
+                //properties.Persistent = true;
 
                 channel.BasicPublish(exchange: "",
-                                     routingKey: "hello",
-                                     basicProperties: properties,
+                                     routingKey: "task_queue",
+                                     basicProperties: null,
                                      body: body);
                 Debug.WriteLine(" [x] Verzonden {0}", messageToSend);
             }
