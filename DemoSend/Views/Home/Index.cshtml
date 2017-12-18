@@ -3,14 +3,19 @@
         <img src="~/Afbeeldingen/loket-avatar.jpg" class="img-responsive">
     </div>
     <div class="col-md-2">
-        <form id="saveMessageForm" method="post" >
+        <form id="saveMessageForm" method="post">
             <h2>Selecteer log level(s)</h2>
-            <label><input type="checkbox" name="selectedItems" value="Verbose"> Verbose</label><br />
-            <label><input type="checkbox" name="selectedItems" value="Debug"> Debug</label><br />
-            <label><input type="checkbox" name="selectedItems" value="Information"> Information</label><br />
-            <label><input type="checkbox" name="selectedItems" value="Warning"> Warning</label><br />
-            <label><input type="checkbox" name="selectedItems" value="Error"> Error</label><br />
-            <label><input type="checkbox" name="selectedItems" value="Fatal"> Fatal</label>
+            <label><input id="verbose" type="checkbox" name="selectedItems" value="Verbose" onchange="verboseChange()"> Verbose</label><br />
+
+            <label><input id="debug" type="checkbox" name="selectedItems" value="Debug" onchange="debugChange()"> Debug</label><br />
+
+            <label><input id="information" type="checkbox" name="selectedItems" value="Information" onchange="informationChange()"> Information</label><br />
+
+            <label><input id="warning" type="checkbox" name="selectedItems" value="Warning" onchange="warningChange()"> Warning</label><br />
+
+            <label><input id="error" type="checkbox" name="selectedItems" value="Error" onchange="errorChange()"> Error</label><br />
+
+            <label><input id="fatal" type="checkbox" name="selectedItems" value="Fatal" onchange="fatalChange()"> Fatal</label>
             <br>
             <input type="button" id="saveMessage" value="Push to queue" />
         </form>
@@ -73,11 +78,100 @@
                 }
             });
         });
+        
 
-        $(function change() {
-            if ($("#all").prop("checked", true)) {
-                $("#verbose").prop("checked", true);
+        function verboseChange() {
+            if (document.getElementById("verbose").checked == true) {
+                document.getElementById("debug").checked = true;
+                document.getElementById("information").checked = true;
+                document.getElementById("warning").checked = true;
+                document.getElementById("error").checked = true;
+                document.getElementById("fatal").checked = true;
             }
-        });
+            else if (document.getElementById("verbose").checked == false) {
+                document.getElementById("debug").checked = false;
+                document.getElementById("information").checked = false;
+                document.getElementById("warning").checked = false;
+                document.getElementById("error").checked = false;
+                document.getElementById("fatal").checked = false;
+            }
+        }
+
+        function debugChange() {
+            if (document.getElementById("debug").checked == true) {
+                document.getElementById("verbose").checked = false;
+                document.getElementById("information").checked = true;
+                document.getElementById("warning").checked = true;
+                document.getElementById("error").checked = true;
+                document.getElementById("fatal").checked = true;
+            }
+            else if (document.getElementById("debug").checked == false) {
+                document.getElementById("information").checked = false;
+                document.getElementById("warning").checked = false;
+                document.getElementById("error").checked = false;
+                document.getElementById("fatal").checked = false;
+            }
+        }
+
+        function informationChange() {
+            if (document.getElementById("information").checked == true) {
+                document.getElementById("verbose").checked = false;
+                document.getElementById("debug").checked = false;
+                document.getElementById("warning").checked = true;
+                document.getElementById("error").checked = true;
+                document.getElementById("fatal").checked = true;
+            }
+            else if (document.getElementById("information").checked == false) {
+                document.getElementById("warning").checked = false;
+                document.getElementById("error").checked = false;
+                document.getElementById("fatal").checked = false;
+            }
+        }
+
+        function warningChange() {
+            if (document.getElementById("warning").checked == true) {
+                document.getElementById("verbose").checked = false;
+                document.getElementById("debug").checked = false;
+                document.getElementById("information").checked = false;
+                document.getElementById("error").checked = true;
+                document.getElementById("fatal").checked = true;
+            }
+            else if (document.getElementById("warning").checked == false) {
+                document.getElementById("error").checked = false;
+                document.getElementById("fatal").checked = false;
+            }
+        }
+
+        function errorChange() {
+            if (document.getElementById("error").checked == true) {
+                document.getElementById("verbose").checked = false;
+                document.getElementById("debug").checked = false;
+                document.getElementById("information").checked = false;
+                document.getElementById("warning").checked = false;
+                document.getElementById("fatal").checked = true;
+            }
+            else if (document.getElementById("error").checked == false) {
+                document.getElementById("fatal").checked = false;
+            }
+        }
+
+        function fatalChange() {
+            if (document.getElementById("fatal").checked == true) {
+                document.getElementById("verbose").checked = false;
+                document.getElementById("debug").checked = false;
+                document.getElementById("information").checked = false;
+                document.getElementById("warning").checked = false;
+                document.getElementById("error").checked = false;
+                document.getElementById("fatal").checked = true;
+            }
+            else if (document.getElementById("fatal").checked == false) {
+                document.getElementById("verbose").checked = false;
+                document.getElementById("debug").checked = false;
+                document.getElementById("information").checked = false;
+                document.getElementById("warning").checked = false;
+                document.getElementById("error").checked = false;
+                document.getElementById("fatal").checked = false;
+            }
+        }
     </script>
 }
