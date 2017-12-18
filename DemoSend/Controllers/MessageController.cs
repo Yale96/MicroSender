@@ -24,7 +24,7 @@ namespace DemoSend.Controllers
         }
 
 
-        public HttpResponseMessage Post( Blaa data)
+        public HttpResponseMessage Post( Levels data)
         {
             SaveMessages(data.LogLevels);
 
@@ -34,7 +34,7 @@ namespace DemoSend.Controllers
             return response;
         }
 
-        public class Blaa
+        public class Levels
         {
             public string[] LogLevels { get; set; }
         }
