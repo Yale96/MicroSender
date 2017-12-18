@@ -58,15 +58,6 @@
 
             var json = JSON.stringify(blaa);
 
-
-            /*$.post("/api/message",
-                json, //$("#saveMessageForm").serialize(),
-                function (value) {
-                    console.log('Success!');
-                },
-                "json"
-            );*/
-
             $.ajax({
                 url: "/api/message/",
                 type: "POST",

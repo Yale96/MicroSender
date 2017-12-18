@@ -26,7 +26,7 @@ namespace DemoSend.Controllers
 
         public HttpResponseMessage Post( Blaa data)
         {
-            Test(data.LogLevels);
+            SaveMessages(data.LogLevels);
 
 
             var response = Request.CreateResponse<Message>(System.Net.HttpStatusCode.Created, null);
@@ -40,7 +40,7 @@ namespace DemoSend.Controllers
         }
 
 
-        private void Test(string[] logLevels)
+        private void SaveMessages(string[] logLevels)
         {
             var messages = this.messageRepository.GetAllMessages();
             var filteredMessages = messages.Where(x => logLevels.Contains(x.LogLevel));
